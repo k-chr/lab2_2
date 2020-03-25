@@ -4,6 +4,9 @@ import helpers.SequenceSearcherMock;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.greaterThan;
+import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -11,6 +14,7 @@ public class SimilarityFinderBehaviorTestCases {
 
     private SimilarityFinder finder = null;
     private SequenceSearcherMock searchAlgorithm = null;
+    private static final int ZERO = 0;
 
     @BeforeEach
     void init() {
@@ -48,7 +52,13 @@ public class SimilarityFinderBehaviorTestCases {
 
     @Test
     void checkIfSequenceSearcherIsReferencedBySimilarityTest() {
+        int[] seq1, seq2;
+        seq1 = new int[]{1, 2, 3};
+        seq2 = new int[]{2, 3, 4};
 
+        finder.calculateJackardSimilarity(seq1, seq2);
+
+        assertThat(searchAlgorithm.searchMethodCalls, is(greaterThan(ZERO)));
     }
 
     @Test

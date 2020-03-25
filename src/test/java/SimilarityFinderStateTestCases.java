@@ -15,7 +15,7 @@ public class SimilarityFinderStateTestCases {
     private static final double FULL_MATCHING_SETS = 1.0;
     private static final double FULL_MISMATCHING_SETS = 0.0;
     private static final double TWENTY_PERCENT = 0.2;
-    private static final double EIGHTY_PERCENT = 0.8;
+    private static final double FIFTY_PERCENT = 0.5;
 
     @BeforeAll
     static void init(){
@@ -79,7 +79,11 @@ public class SimilarityFinderStateTestCases {
 
     @Test
     void calculateJackardSimilarityForTwoSetsThatDifferWithOnlyOneElementTest(){
+        int[] collection1 = new int[]{15,214,33};
+        int[] collection2 = new int[]{15,24,33};
 
+        double result = finder.calculateJackardSimilarity(collection1, collection2);
+        assertThat(result, is(FIFTY_PERCENT));
     }
 
 }

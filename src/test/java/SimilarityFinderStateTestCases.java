@@ -41,7 +41,11 @@ public class SimilarityFinderStateTestCases {
 
     @Test
     void calculateJackardSimilarityForFirstEmptySetAndSecondNotEmptyTest(){
+        int[] collection1 = new int[]{};
+        int[] collection2 = new int[]{66,75,43};
 
+        double result = finder.calculateJackardSimilarity(collection1, collection2);
+        assertThat(result, is(FULL_MISMATCHING_SETS));
     }
 
     @Test

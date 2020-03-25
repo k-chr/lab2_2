@@ -43,8 +43,8 @@ public class SimilarityFinderBehaviorTestCases {
     @Test
     void checkSimilarityFinderBehaviorIfAppliedInterfaceIsNullTest() {
         int[] seq1, seq2;
-        seq1 = new int[]{};
-        seq2 = new int[]{};
+        seq1 = new int[]{1,1,1};
+        seq2 = new int[]{2,2,2};
         finder = new SimilarityFinder(null);
 
         assertThrows(NullPointerException.class, ()->finder.calculateJackardSimilarity(seq1, seq2));
@@ -63,12 +63,20 @@ public class SimilarityFinderBehaviorTestCases {
 
     @Test
     void checkSimilarityFinderBehaviorIfFirstSequenceIsNullTest() {
+        int[] seq1, seq2;
+        seq1 = null;
+        seq2 = new int[]{2, 4};
 
+        assertThrows(NullPointerException.class, ()->finder.calculateJackardSimilarity(seq1, seq2));
     }
 
     @Test
     void checkSimilarityFinderBehaviorIfSecondSequenceIsNullTest() {
+        int[] seq1, seq2;
+        seq1 = new int[]{4, 2};
+        seq2 = null;
 
+        assertThrows(IllegalArgumentException.class, ()->finder.calculateJackardSimilarity(seq1, seq2));
     }
 
 }

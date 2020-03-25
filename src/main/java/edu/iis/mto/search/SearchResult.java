@@ -10,6 +10,10 @@ public class SearchResult {
         this.position = builder.position;
     }
 
+    public static Builder builder() {
+        return new Builder();
+    }
+
     public boolean isFound() {
         return found;
     }
@@ -18,16 +22,13 @@ public class SearchResult {
         return position;
     }
 
-    public static Builder builder() {
-        return new Builder();
-    }
-
     public static final class Builder {
 
         private boolean found;
         private int position;
 
-        private Builder() {}
+        private Builder() {
+        }
 
         public Builder withFound(boolean found) {
             this.found = found;

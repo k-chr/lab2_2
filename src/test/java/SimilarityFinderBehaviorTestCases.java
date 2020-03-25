@@ -38,7 +38,12 @@ public class SimilarityFinderBehaviorTestCases {
 
     @Test
     void checkSimilarityFinderBehaviorIfAppliedInterfaceIsNullTest() {
+        int[] seq1, seq2;
+        seq1 = new int[]{};
+        seq2 = new int[]{};
+        finder = new SimilarityFinder(null);
 
+        assertThrows(NullPointerException.class, ()->finder.calculateJackardSimilarity(seq1, seq2));
     }
 
     @Test

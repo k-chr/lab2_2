@@ -1,7 +1,6 @@
 import edu.iis.mto.search.SequenceSearcher;
 import edu.iis.mto.similarity.SimilarityFinder;
 import helpers.SequenceSearcherMock;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,34 +10,38 @@ public class SimilarityFinderBehaviorTestCases {
     private SequenceSearcherMock searchAlgorithm = null;
 
     @BeforeEach
-    void init(){
+    void init() {
         searchAlgorithm = new SequenceSearcherMock();
         finder = new SimilarityFinder(searchAlgorithm);
     }
 
-
     @Test
-    void checkSimilarityFinderBehaviorIfBothSequencesAreNullTest(){
+    void checkSimilarityFinderBehaviorIfBothSequencesAreNotNullTest() {
 
     }
 
     @Test
-    void checkSimilarityFinderBehaviorIfAppliedInterfaceIsNullTest(){
+    void checkSimilarityFinderBehaviorIfBothSequencesAreNullTest() {
 
     }
 
     @Test
-    void checkIfSequenceSearcherIsReferencedBySimilarityTest(){
+    void checkSimilarityFinderBehaviorIfAppliedInterfaceIsNullTest() {
 
     }
 
     @Test
-    void checkSimilarityFinderBehaviorIfFirstSequenceIsNullTest(){
+    void checkIfSequenceSearcherIsReferencedBySimilarityTest() {
 
     }
 
     @Test
-    void checkSimilarityFinderBehaviorIfSecondSequenceIsNullTest(){
+    void checkSimilarityFinderBehaviorIfFirstSequenceIsNullTest() {
+
+    }
+
+    @Test
+    void checkSimilarityFinderBehaviorIfSecondSequenceIsNullTest() {
 
     }
 

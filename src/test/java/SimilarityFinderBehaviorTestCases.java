@@ -12,9 +12,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class SimilarityFinderBehaviorTestCases {
 
+    private static final int ZERO = 0;
     private SimilarityFinder finder = null;
     private SequenceSearcherMock searchAlgorithm = null;
-    private static final int ZERO = 0;
 
     @BeforeEach
     void init() {
@@ -28,7 +28,7 @@ public class SimilarityFinderBehaviorTestCases {
         seq1 = new int[]{};
         seq2 = new int[]{};
 
-        assertDoesNotThrow(()->finder.calculateJackardSimilarity(seq1, seq2));
+        assertDoesNotThrow(() -> finder.calculateJackardSimilarity(seq1, seq2));
     }
 
     @Test
@@ -37,17 +37,17 @@ public class SimilarityFinderBehaviorTestCases {
         seq1 = null;
         seq2 = null;
 
-        assertThrows(NullPointerException.class, ()->finder.calculateJackardSimilarity(seq1, seq2));
+        assertThrows(NullPointerException.class, () -> finder.calculateJackardSimilarity(seq1, seq2));
     }
 
     @Test
     void checkSimilarityFinderBehaviorIfAppliedInterfaceIsNullTest() {
         int[] seq1, seq2;
-        seq1 = new int[]{1,1,1};
-        seq2 = new int[]{2,2,2};
+        seq1 = new int[]{1, 1, 1};
+        seq2 = new int[]{2, 2, 2};
         finder = new SimilarityFinder(null);
 
-        assertThrows(NullPointerException.class, ()->finder.calculateJackardSimilarity(seq1, seq2));
+        assertThrows(NullPointerException.class, () -> finder.calculateJackardSimilarity(seq1, seq2));
     }
 
     @Test
@@ -67,7 +67,7 @@ public class SimilarityFinderBehaviorTestCases {
         seq1 = null;
         seq2 = new int[]{2, 4};
 
-        assertThrows(NullPointerException.class, ()->finder.calculateJackardSimilarity(seq1, seq2));
+        assertThrows(NullPointerException.class, () -> finder.calculateJackardSimilarity(seq1, seq2));
     }
 
     @Test
@@ -76,7 +76,7 @@ public class SimilarityFinderBehaviorTestCases {
         seq1 = new int[]{4, 2};
         seq2 = null;
 
-        assertThrows(IllegalArgumentException.class, ()->finder.calculateJackardSimilarity(seq1, seq2));
+        assertThrows(IllegalArgumentException.class, () -> finder.calculateJackardSimilarity(seq1, seq2));
     }
 
 }

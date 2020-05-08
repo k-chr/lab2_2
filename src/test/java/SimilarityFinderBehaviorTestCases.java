@@ -1,4 +1,3 @@
-import edu.iis.mto.search.SequenceSearcher;
 import edu.iis.mto.similarity.SimilarityFinder;
 import helpers.SequenceSearcherMock;
 import org.junit.jupiter.api.BeforeEach;
